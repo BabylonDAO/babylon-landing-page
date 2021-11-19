@@ -162,13 +162,13 @@ const TOP_OUTER = styled.div`
 const TOWER = styled(CenteredImg)`
   position: absolute;
   z-index: 3;
-  
+
   ${({ theme }) => theme.mediaWidth.upToSmall`
     display: none;
   `}
   ${({ theme }) => theme.mediaWidth.fromSmall`
     right: 5vw;
-    top: 190px;
+    top: 150px;
   `}
   ${({ theme }) => theme.mediaWidth.fromMedium`
     right: 10vw;
@@ -178,17 +178,54 @@ const TOWER = styled(CenteredImg)`
     right: 5vw;
     top: 100px;
   `}
-  
-  > div:first-child {
-    ${({ theme }) => theme.mediaWidth.fromSmall`
-      height: 400px;
-    `}
-    ${({ theme }) => theme.mediaWidth.fromMedium`
-      height: 500px;
-    `}
-    ${({ theme }) => theme.mediaWidth.fromLarge`
-      height: 650px;
-    `}
+
+  > div {
+    position: relative;
+
+    > div:first-child {
+      ${({ theme }) => theme.mediaWidth.fromSmall`
+        height: 400px;
+      `}
+      ${({ theme }) => theme.mediaWidth.fromMedium`
+        height: 500px;
+      `}
+      ${({ theme }) => theme.mediaWidth.fromLarge`
+        height: 650px;
+      `}
+    }
+    
+    > div:nth-child(2) {
+      position: absolute;
+      left: -20%;
+      top: 10%;
+
+      ${({ theme }) => theme.mediaWidth.fromSmall`
+        height: 40px;
+      `}
+      ${({ theme }) => theme.mediaWidth.fromMedium`
+        height: 60px;
+      `}
+      ${({ theme }) => theme.mediaWidth.fromLarge`
+        height: 80px;
+      `}
+    }
+
+    > div:last-child {
+      position: absolute;
+      right: 0;
+      top: 40%;
+      z-index: -1;
+
+      ${({ theme }) => theme.mediaWidth.fromSmall`
+        height: 40px;
+      `}
+      ${({ theme }) => theme.mediaWidth.fromMedium`
+        height: 60px;
+      `}
+      ${({ theme }) => theme.mediaWidth.fromLarge`
+        height: 80px;
+      `}
+    }
   }
 `
 
@@ -203,15 +240,17 @@ export const Intro: FC = () => {
     <WRAPPER>
       <Header />
       <TOWER>
-        <CenteredImg>
-          <img src={`${process.env.PUBLIC_URL}/img/assets/tower.png`} alt="" />
-        </CenteredImg>
-        <CenteredImg>
-          <img src={`${process.env.PUBLIC_URL}/img/assets/cloud.png`} alt="" />
-        </CenteredImg>
-        <CenteredImg>
-          <img src={`${process.env.PUBLIC_URL}/img/assets/cloud.png`} alt="" />
-        </CenteredImg>
+        <div>
+          <CenteredImg>
+            <img src={`${process.env.PUBLIC_URL}/img/assets/tower.png`} alt="" />
+          </CenteredImg>
+          <CenteredImg>
+            <img src={`${process.env.PUBLIC_URL}/img/assets/cloud.png`} alt="" />
+          </CenteredImg>
+          <CenteredImg>
+            <img src={`${process.env.PUBLIC_URL}/img/assets/cloud.png`} alt="" />
+          </CenteredImg>
+        </div>
       </TOWER>
       <INTRO>
         <TOP_OUTER>

@@ -111,7 +111,7 @@ export const Contact: FC = () => {
       <LEFT>
         <LOGO>
           <CenteredImg>
-            <img src={`${process.env.PUBLIC_URL}/img/assets/logo.svg`} alt="" />
+            <img src={`${process.env.PUBLIC_URL}/img/assets/logo.png`} alt="" />
           </CenteredImg>
           <span>BabylonDAO</span>
         </LOGO>
