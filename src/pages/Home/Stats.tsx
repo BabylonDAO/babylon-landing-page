@@ -51,7 +51,7 @@ export const Stats: FC = () => {
     <WRAPPER>
       <STATS>
         <FlexColumnDiv>
-          <span>Total BABYLON Staked</span>
+          <span>Total Stake</span>
           <span>{total}</span>
         </FlexColumnDiv>
         <FlexColumnDiv>

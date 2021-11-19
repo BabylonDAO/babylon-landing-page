@@ -75,7 +75,7 @@ const STAKE = styled(FlexColumnDiv)`
 
 const WRAPPER = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.primary2};
+  background-color: #0E1A45;
   
   ${({ theme }) => theme.mediaWidth.upToSmall`
     text-align: center;
@@ -99,12 +99,13 @@ const WRAPPER = styled.div`
     }
     
     h4 {
+      font-size: 400;
       line-height: 24px;
       color: white;
     }
     
     h5 {
-      margin: 16px 0;
+      margin: 16px 0 32px;
       font-size: 16px;
       color: ${({ theme }) => theme.grey1};
     }

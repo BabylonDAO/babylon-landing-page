@@ -8,21 +8,26 @@ const LOGO = styled(CenteredDiv)`
   }
 
   > span {
+    margin-left: 16px;
     font-size: 20px;
-    font-weight: bold;
     color: ${({ theme }) => theme.primary1};
   }
 `
 
 const TABS = styled.div`
   > button {
+    white-space: nowrap;
     margin-left: 64px;
     padding: 8px 24px;
     border: none;
     border-radius: 8px;
-    background-color: ${({ theme }) => theme.primary2};
+    background-color: #0E1A45;
     transition: background-color ${({ theme }) => theme.hapticTransitionTime} ease-in-out;
     cursor: pointer;
+    
+    ${({ theme }) => theme.mediaWidth.upToSmall`
+      margin-left: 16px;
+    `}
     
     :hover {
       background-color: ${({ theme }) => theme.primary2h};
@@ -36,7 +41,7 @@ const TABS = styled.div`
   > a {
     margin-right: 16px;
     font-size: 15px;
-    color: ${({ theme }) => theme.primary2};
+    color: #0E1A45;
     transition: color ${({ theme }) => theme.hapticTransitionTime} ease-in-out;
     cursor: pointer;
 
@@ -54,7 +59,7 @@ const WRAPPER = styled(SpaceBetweenDiv)`
   padding: 32px 0;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    margin: 0 32px;
+    margin: 0 16px;
   `}
   ${({ theme }) => theme.mediaWidth.fromSmall`
     width: 1200px;
@@ -68,7 +73,7 @@ export const Header: FC = () => {
     <WRAPPER>
       <LOGO>
         <CenteredImg>
-          <img src={`${process.env.PUBLIC_URL}/img/assets/logo.png`} alt="" />
+          <img src={`${process.env.PUBLIC_URL}/img/assets/logo.svg`} alt="" />
         </CenteredImg>
         <span>BabylonDAO</span>
       </LOGO>

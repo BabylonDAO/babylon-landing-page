@@ -10,14 +10,14 @@ const CENTER = styled(FlexColumnDiv)`
     width: 4px;
     height: 150px;
     margin: 12px 0;
-    background-color: black;
+    background-color: #0E1A45;
   }
 
   > span {
     position: relative;
     ${({ theme }) => theme.flexCenter}
     ${({ theme }) => theme.measurements('40px')};
-    background-color: black;
+    background-color: #0E1A45;
     color: white;
     font-weight: bold;
     font-size: 12px;
@@ -30,7 +30,7 @@ const CENTER = styled(FlexColumnDiv)`
       content: '';
       display: block;
       width: 100px;
-      border-top: dashed 4px black;
+      border-top: dashed 4px #0E1A45;
     }
     
     &:nth-child(3)::after {
@@ -39,7 +39,7 @@ const CENTER = styled(FlexColumnDiv)`
       content: '';
       display: block;
       width: 100px;
-      border-top: dashed 4px black;
+      border-top: dashed 4px #0E1A45;
     }
   }
 `
@@ -51,12 +51,16 @@ const ITEM = styled(FlexColumnDiv)`
 
   span {
     font-weight: 400;
-    color: black;
+    color: #0E1A45;
+
+    ${({ theme }) => theme.mediaWidth.fromLarge`
+      width: 66%;
+    `}
   }
   
   h3 {
     font-size: 20px;
-    color: black;
+    color: #0E1A45;
   }
 
   h4 {
@@ -68,9 +72,23 @@ const ITEM = styled(FlexColumnDiv)`
 const MODEL_DESKTOP = styled(CenteredDiv)`
   position: relative;
   margin-left: 6vw;
+
   ${({ theme }) => theme.mediaWidth.upToLarge`
     display: none;
   `}
+  
+  > div:first-child > div:nth-child(2) {
+    align-self: baseline;
+  }
+  
+  > div:last-child > div:first-child {
+    justify-content: flex-start;
+  }
+
+  > div:last-child > div:last-child {
+    margin-left: -80px;
+    justify-content: flex-start;
+  }
 
   > div {
     flex-direction: column;
@@ -93,10 +111,38 @@ const MODEL_DESKTOP = styled(CenteredDiv)`
   }
 `
 
+const TRIPLE = styled.div`
+  width: 160px;
+  height: 100px;
+  position: relative;
+  
+  ${({ theme }) => theme.mediaWidth.fromLarge`
+    margin-left: -80px;
+    margin-bottom: 100px;
+  `}
+  
+  > div:first-child {
+    position: absolute;
+  }
+  
+  > div:nth-child(2) {
+    position: absolute;
+    left: 40px;
+    z-index: 3;
+  }
+  
+  > div:last-child {
+    position: absolute;
+    left: 80px;
+    z-index: 4;
+  }
+`
+
 const MODEL_RESPONSIVE = styled(FlexColumnDiv)`
   ${({ theme }) => theme.mediaWidth.upToLarge`
     width: 80%;
   `}
+
   ${({ theme }) => theme.mediaWidth.upToSmall`
     width: 100%;
     text-align: center;
@@ -109,13 +155,22 @@ const MODEL_RESPONSIVE = styled(FlexColumnDiv)`
       &:first-child,
       &:last-child {
         flex-direction: column-reverse;
+        
+        > div:last-child {
+          margin-bottom: 3vh;
+        }
       }
       
       &:nth-child(2) {
         flex-direction: column;
+        
+        > div:first-child {
+          margin-bottom: 3vh;
+        }
       }
     }
   `}
+
   ${({ theme }) => theme.mediaWidth.fromLarge`
     display: none;
   `}
@@ -159,8 +214,13 @@ const WRAPPER = styled(CenteredDiv)`
     margin-bottom: 64px;
     font-size: 40px;
     font-weight: bold;
-    color: white;
-    color: black;
+    color: #0E1A45;
+
+    ${({ theme }) => theme.mediaWidth.upToSmall`
+      text-align: center;
+      width: 1200px;
+      max-width: 80%;
+    `}
   }
 `
 
@@ -222,9 +282,17 @@ export const Model: FC = () => {
         </CenteredDiv>
         <Center />
         <div>
-          <CenteredImg>
-            <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
-          </CenteredImg>
+          <TRIPLE>
+            <CenteredImg>
+              <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
+            </CenteredImg>
+            <CenteredImg>
+              <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
+            </CenteredImg>
+            <CenteredImg>
+              <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
+            </CenteredImg>
+          </TRIPLE>
           <Item
             header="Treasury Growth"
             title="Babylon Treasury"
@@ -242,9 +310,17 @@ export const Model: FC = () => {
             title="Bonds & LP Fees"
             text="Bond sales and LP Fees increase Treasury Revenue and lock in liquidity and help control Babylon supply"
           />
-          <CenteredImg>
-            <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
-          </CenteredImg>
+          <TRIPLE>
+            <CenteredImg>
+              <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
+            </CenteredImg>
+            <CenteredImg>
+              <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
+            </CenteredImg>
+            <CenteredImg>
+              <img src={`${process.env.PUBLIC_URL}/img/assets/usdc.png`} alt="" />
+            </CenteredImg>
+          </TRIPLE>
         </SpaceBetweenDiv>
         <SpaceBetweenDiv>
           <CenteredImg>

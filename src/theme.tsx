@@ -67,7 +67,7 @@ export function colors(): Colors {
     // secondary colors
     secondary1: '#958454',
     secondary1h: '#857444',
-    secondary2: '#FFC768',
+    secondary2: '#EAD097',
     secondary2h: '#EFB758'
   }
 }

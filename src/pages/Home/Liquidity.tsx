@@ -8,10 +8,17 @@ const STATS = styled(FlexColumnDiv)`
     margin-bottom: 40px;
   }
   
+  > div:last-child {
+    span:first-child {
+      color: #0E1A45;
+    }
+  }
+  
   span {
     color: black;
     
     &:first-child {
+      color: #B08643;
       font-size: 40px;
     }
     
@@ -42,12 +49,12 @@ const WRAPPER = styled(CenteredDiv)`
 
   h3 {
     font-size: 28px;
-    color: black;
+    color: #0e1a45;
   }
   
   h4 {
     line-height: 24px;
-    color: black;
+    color: #0e1a45;
 
     ${({ theme }) => theme.mediaWidth.fromMedium`
       width: 40vw;

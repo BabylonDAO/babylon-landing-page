@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { CenteredDiv, SpaceBetweenDiv } from '../../styles'
+import { CenteredDiv, CenteredImg, SpaceBetweenDiv } from '../../styles'
 
 const CONTENT = styled(SpaceBetweenDiv)`
   width: 100%;
@@ -16,6 +16,11 @@ const CONTENT = styled(SpaceBetweenDiv)`
     flex: 1;
     height: 300px;
     text-align: center;
+    
+    > div {
+      ${({ theme }) => theme.measurements('64px')}
+      margin: 0 auto 3vh;
+    }
 
     ${({ theme }) => theme.mediaWidth.upToMedium`
       margin-top: 64px;
@@ -30,8 +35,8 @@ const CONTENT = styled(SpaceBetweenDiv)`
   
   h3 {
     ${({ theme }) => theme.flexCenter}
-    font-size: 28px;
-    color: black;
+    font-size: 20px;
+    color: #0E1A45;
 
     ${({ theme }) => theme.mediaWidth.fromMedium`
       height: 120px;
@@ -42,7 +47,7 @@ const CONTENT = styled(SpaceBetweenDiv)`
     font-size: 16px;
     font-weight: 400;
     line-height: 32px;
-    color: black;
+    color: #0E1A45;
   }
 `
 
@@ -50,7 +55,7 @@ const WRAPPER = styled(CenteredDiv)`
   flex-direction: column;
   width: 1200px;
   max-width: 80%;
-  margin: 15vh auto;
+  margin: 15vh auto 20vh;
   
   h2 {
     font-size: 40px;
@@ -72,8 +77,11 @@ export const Babylon: FC = () => {
       </h2>
       <CONTENT>
         <div>
+          <CenteredImg>
+            <img src={`${process.env.PUBLIC_URL}/img/assets/bab1.png`} alt="" />
+          </CenteredImg>
           <h3>
-            Babylon is designed to grow in value
+            Designed to grow in value
           </h3>
           <h5>
             Babylon is backed by an ever-growing, income-generating treasury. We’ve created a currency that is able to
@@ -81,6 +89,9 @@ export const Babylon: FC = () => {
           </h5>
         </div>
         <div>
+          <CenteredImg>
+            <img src={`${process.env.PUBLIC_URL}/img/assets/bab2.png`} alt="" />
+          </CenteredImg>
           <h3>
             Babylon is primarily built on Solana
           </h3>
@@ -90,6 +101,9 @@ export const Babylon: FC = () => {
           </h5>
         </div>
         <div>
+          <CenteredImg>
+            <img src={`${process.env.PUBLIC_URL}/img/assets/bab3.png`} alt="" />
+          </CenteredImg>
           <h3>
             Adaptability
           </h3>
